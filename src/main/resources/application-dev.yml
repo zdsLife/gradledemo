@@ -1,0 +1,25 @@
+server:
+  port: 9011
+  servlet:
+    context-path: /treedemo
+debug: false
+
+logging:
+  level:
+    root: INFO
+#    root: debug
+  pattern:
+    console: '%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger [%L]- %msg%n'
+    file: '%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger [%L]- %msg%n'
+  file:
+    name: logs/tree-demo.log
+
+
+
+spring:
+#  先用自己本地的数据库自测
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/dw-uat1?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.jdbc.Driver
