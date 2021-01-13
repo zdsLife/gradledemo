@@ -27,8 +27,32 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.16'
+	compile group: 'cn.hutool', name: 'hutool-all', version: '4.6.6'
+	compile group: 'org.elasticsearch.client', name: 'elasticsearch-rest-high-level-client', version: '7.5.2'
+	compile group: 'org.apache.commons', name: 'commons-csv', version: '1.8'
+	compile group: 'org.apache.poi', name: 'poi', version: '3.17'
+	compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'
+	compile group: 'org.apache.poi', name: 'ooxml-schemas', version: '1.3'
+	compile group: 'com.ibm.icu', name: 'icu4j', version: '65.1'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-aop'
+	compile group: 'com.github.pagehelper', name: 'pagehelper-spring-boot-autoconfigure', version: '1.2.12'
+	compile group: 'com.github.pagehelper', name: 'pagehelper-spring-boot-starter', version: '1.2.12'
+	compile group: 'com.github.pagehelper', name: 'pagehelper', version: '5.1.10'
+	compile group: 'org.apache.shiro', name:'shiro-spring', version: '1.2.4'
+	compile group: 'org.apache.shiro', name:'shiro-cas', version: '1.2.4'
+	compile group: 'org.apache.shiro', name:'shiro-ehcache', version: '1.2.4'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+	compile group: 'tk.mybatis', name: 'mapper-spring-boot-starter', version: '2.1.5'
+	compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '2.1.0'
+	compile group: 'org.mybatis.generator', name: 'mybatis-generator-core', version: '1.3.3'
+	// https://mvnrepository.com/artifact/org.apache.shiro/shiro-core
+	implementation group: 'org.apache.shiro', name: 'shiro-core', version: '1.2.4'
+	compile ('org.mybatis.generator:mybatis-generator-maven-plugin:1.3.7') {
+		// 排除冲突jar包
+		exclude module:'sisu-guava'
+		exclude module:'google-collect'
+	}
 
 }
 
