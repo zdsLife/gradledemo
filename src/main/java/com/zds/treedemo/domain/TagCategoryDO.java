@@ -67,5 +67,5 @@ public class TagCategoryDO {
     /**
      * 当前标签分类的子分类集合
      */
-    List<TagCategoryDO> childList;
+    List<TagCategoryDO> children;
 }

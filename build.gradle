@@ -19,7 +19,10 @@ tasks.withType(JavaCompile) {
 }
 
 repositories {
+	maven { url 'https://maven.aliyun.com/repository/public/' }
+	mavenLocal()
 	mavenCentral()
+
 }
 
 dependencies {
