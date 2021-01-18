@@ -1,5 +1,6 @@
 package com.zds.treedemo.controller;
 
+import com.zds.treedemo.annotation.MonitorRequest;
 import com.zds.treedemo.annotation.Result;
 import com.zds.treedemo.utils.TagCategoryTreeNodeUtil;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -23,6 +24,7 @@ public class RestTarget {
     }
 
     @Result
+    @MonitorRequest
     @GetMapping("tree/{id}")
     public Object getTreeNode(@PathVariable Integer id) {
         return TagCategoryTreeNodeUtil.getInstance().getTagCategoryDOTree(id);

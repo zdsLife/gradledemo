@@ -7,4 +7,6 @@ import java.util.List;
 public interface TagCategoryService {
 
     List<TagCategoryDO> selectAll();
+
+
 }
