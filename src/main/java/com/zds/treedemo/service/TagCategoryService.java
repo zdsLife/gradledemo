@@ -8,5 +8,4 @@ public interface TagCategoryService {
 
     List<TagCategoryDO> selectAll();
 
-
 }

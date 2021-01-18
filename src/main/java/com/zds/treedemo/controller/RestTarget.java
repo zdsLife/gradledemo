@@ -24,9 +24,19 @@ public class RestTarget {
     }
 
     @Result
-    @MonitorRequest
+//    @MonitorRequest
     @GetMapping("tree/{id}")
     public Object getTreeNode(@PathVariable Integer id) {
         return TagCategoryTreeNodeUtil.getInstance().getTagCategoryDOTree(id);
     }
+
+    @Result
+//    @MonitorRequest
+    @GetMapping("para")
+    public Object getTreeNode(String a) {
+        System.out.println("----------------->>>>>>"+a);
+        return "有意思";
+    }
+
+
 }

@@ -41,7 +41,7 @@ public enum TagCategoryTreeNodeUtil {
         tagCategoryService = SpringFactoryUtil.getBean(TagCategoryServiceImpl.class);
         List<TagCategoryDO> all = tagCategoryService.selectAll();
         all.stream().forEach(item -> {
-            System.out.println("----->" + item);
+//            System.out.println("----->" + item);
         });
         // 获取所有的标签分类 以键值对保存
         all.forEach(item -> cachedTagCategoryDOs.put(item.getId(), item));
@@ -104,7 +104,7 @@ public enum TagCategoryTreeNodeUtil {
         for (TagCategoryDO child : childTreeNodes) {
             //递归 给子分类设置子标签分类
             TagCategoryDO n = recursiveTree(child.getId());
-            System.out.println("====<<<<<"+n);
+//            System.out.println("====<<<<<"+n);
             tagCategoryIds.add(n.getId());
             tagCategoryTree.getChildren().add(n);
         }
