@@ -1,5 +1,7 @@
 package com.zds.treedemo;
 
+import cn.hutool.http.ContentType;
+import cn.hutool.http.HttpUtil;
 import com.zds.treedemo.domain.TagCategoryDO;
 import com.zds.treedemo.mapper.TagCategoryMapper;
 import com.zds.treedemo.utils.TagCategoryTreeNodeUtil;
@@ -314,5 +316,23 @@ class TreedemoApplicationTests {
         TagCategoryDO tagCategoryDOTree = TagCategoryTreeNodeUtil.getInstance().getTagCategoryDOTree(68);
         System.out.println(tagCategoryDOTree);
 
+    }
+
+    @Test
+    public void getServer(){
+
+        HttpUtil.createServer(8888)
+                // 返回JSON数据测试
+                .addAction("/restTest", (request, response) ->
+                        response.write("{\"id\": 1, \"msg\": \"OK\"}", ContentType.JSON.toString())
+                ).start();
+    }
+
+    public static void main(String[] args) {
+        HttpUtil.createServer(8888)
+                // 返回JSON数据测试
+                .addAction("/restTest", (request, response) ->
+                        response.write("{\"id\": 1, \"msg\": \"OK\"}", ContentType.JSON.toString())
+                ).start();
     }
 }

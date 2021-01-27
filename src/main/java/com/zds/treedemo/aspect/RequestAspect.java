@@ -46,7 +46,7 @@ public class RequestAspect {
         logger.info("class=" + joinPoint.getSignature().getDeclaringTypeName() +
                 "and method name=" + joinPoint.getSignature().getName());
         //参数
-        logger.info("参数=" + joinPoint.getArgs().toString());
+        logger.info("参数=" + joinPoint.getArgs());
 
     }
 

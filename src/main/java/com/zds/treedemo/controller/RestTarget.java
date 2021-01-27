@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2021/1/11 18:14
  */
 @RestController
-@RequestMapping("target")
+@RequestMapping("rest")
 public class RestTarget {
 
     @GetMapping(value="test")
@@ -24,14 +24,14 @@ public class RestTarget {
     }
 
     @Result
-//    @MonitorRequest
+    @MonitorRequest
     @GetMapping("tree/{id}")
     public Object getTreeNode(@PathVariable Integer id) {
         return TagCategoryTreeNodeUtil.getInstance().getTagCategoryDOTree(id);
     }
 
     @Result
-//    @MonitorRequest
+    @MonitorRequest
     @GetMapping("para")
     public Object getTreeNode(String a) {
         System.out.println("----------------->>>>>>"+a);

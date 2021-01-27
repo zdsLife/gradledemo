@@ -18,7 +18,7 @@ public class TestController {
      * 添加了自定义注解@MonitorRequest
      * @return
      */
-//    @MonitorRequest
+    @MonitorRequest
     @RequestMapping(value = "/test")
     @Result
     public Object test(){

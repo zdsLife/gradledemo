@@ -1,5 +1,7 @@
 package com.zds.treedemo.domain;
 
+import cn.hutool.http.ContentType;
+import cn.hutool.http.HttpUtil;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -68,4 +70,12 @@ public class TagCategoryDO {
      * 当前标签分类的子分类集合
      */
     List<TagCategoryDO> children;
+
+    public static void main(String[] args) {
+        HttpUtil.createServer(8888)
+                // 返回JSON数据测试
+                .addAction("/restTest", (request, response) ->
+                        response.write("{\"id\": 1, \"msg\": \"OK\"}", ContentType.JSON.toString())
+                ).start();
+    }
 }
