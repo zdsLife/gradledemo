@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class RestTarget {
 
     @GetMapping(value="test")
+    @Result
     public String test() {
         return "test";
     }
