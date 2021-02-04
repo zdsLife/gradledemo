@@ -16,7 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 public class UserServiceImpl implements UserService {
-
     @Autowired
     private UserMapper userMapper;
 
@@ -34,12 +33,16 @@ public class UserServiceImpl implements UserService {
         return "success";
     }
 
-    private void addSysLog() {
-        try {
+//    @Transactional(rollbackFor = Exception.class)
+    void addSysLog() throws Exception{
+//        try {
             // 日志事件名称非空
-            sysLogMapper.insertUseGeneratedKeys(SysLogDO.builder().build());
-        } catch (Exception e) {
-            System.out.println("=========>>addSysLog" + e);
-        }
+            sysLogMapper.insertUseGeneratedKeys(SysLogDO.builder()
+//                    .name("测试事务")
+                    .build());
+            throw new NullPointerException();
+//        } catch (Exception e) {
+//            System.out.println("=========>>addSysLog" + e);
+//        }
     }
 }
