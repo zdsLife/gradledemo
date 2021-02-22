@@ -3,7 +3,6 @@ package com.zds.treedemo.controller;
 import com.zds.treedemo.annotation.MonitorRequest;
 import com.zds.treedemo.annotation.Result;
 import com.zds.treedemo.utils.TagCategoryTreeNodeUtil;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,9 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("rest")
 public class RestTarget {
 
-    @GetMapping(value="test")
+    @GetMapping(value = "test")
     @Result
-    public String test() {
+//    public String test() {
+//        return "test";
+//    }
+    public Object test() {
         return "test";
     }
 

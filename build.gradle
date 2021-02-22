@@ -1,7 +1,14 @@
+//plugins {
+//    id 'org.springframework.boot' version '2.4.1'
+//    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+//    id 'java'
+//}
+
 plugins {
-    id 'org.springframework.boot' version '2.4.1'
-    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'org.springframework.boot' version '2.4.1'  // 使用spring boot
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'  // 使用spring boot的自动依赖管理
     id 'java'
+    id 'idea'
 }
 
 group = 'com.zds'
@@ -18,6 +25,14 @@ configurations {
 tasks.withType(JavaCompile) {
     options.encoding = "UTF-8"
 }
+
+jar {
+    manifest {
+        attributes "Manifest-Version": 1.0,
+                'Main-Class': 'com.zds.treedemo.TreedemoApplication'
+    }
+}
+
 
 repositories {
     maven { url 'https://maven.aliyun.com/repository/public/' }
@@ -63,3 +78,5 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+jar.enabled=true
