@@ -78,7 +78,6 @@ public class ActionServiceImpl implements ActionService {
                 count = tbLogVisitMapper.insert(tbLogVisit);
             }
         }
-
         return count;
     }
 }
